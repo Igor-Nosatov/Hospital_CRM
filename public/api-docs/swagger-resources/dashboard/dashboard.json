@@ -1,0 +1,187 @@
+{
+    "get": {
+      "summary": "Retrieve dashboard data for the logged-in doctor",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful retrieval of dashboard data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "appointment_score": {
+                    "type": "object",
+                    "properties": {
+                      "total_appointments": {
+                        "type": "integer",
+                        "example": 15
+                      },
+                      "total_online_appointments": {
+                        "type": "integer",
+                        "example": 5
+                      },
+                      "total_offline_appointments": {
+                        "type": "integer",
+                        "example": 10
+                      }
+                    }
+                  },
+                  "first_appointments_today": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "example": 123
+                        },
+                        "patient_id": {
+                          "type": "integer",
+                          "example": 456
+                        },
+                        "appointment_datetime": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-23T09:00:00Z"
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "scheduled"
+                        },
+                        "type": {
+                          "type": "string",
+                          "example": "online"
+                        },
+                        "patient_full_name": {
+                          "type": "string",
+                          "example": "John Doe"
+                        },
+                        "patient_age": {
+                          "type": "integer",
+                          "example": 30
+                        },
+                        "visits_count": {
+                          "type": "integer",
+                          "example": 5
+                        }
+                      }
+                    }
+                  },
+                  "doctor_personal_score": {
+                    "type": "object",
+                    "properties": {
+                      "total_patients": {
+                        "type": "integer",
+                        "example": 100
+                      },
+                      "month_list": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "example": "Jan"
+                        }
+                      },
+                      "visit_list": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "example": 20
+                        }
+                      },
+                      "doctor_rank": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 4.5
+                      },
+                      "current_year": {
+                        "type": "integer",
+                        "example": 2024
+                      }
+                    }
+                  },
+                  "new_medical_events": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "example": 1
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Annual Medical Conference"
+                        },
+                        "organizer": {
+                          "type": "string",
+                          "example": "Health Org"
+                        },
+                        "event_date": {
+                          "type": "string",
+                          "format": "date",
+                          "example": "2024-08-25"
+                        },
+                        "language": {
+                          "type": "string",
+                          "example": "English"
+                        },
+                        "url_img": {
+                          "type": "string",
+                          "example": "http://example.com/image.jpg"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized access",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "example": "error"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Unauthorized"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "example": "error"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "An internal server error occurred."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,159 @@
+/*============Title===================*/
+.total_meeting_count,
+.completed_meeting_count,
+.cancelled_meeting_count,
+.rescheduled_meeting_count {
+    font-weight: 200;
+    font-size: 45px;
+    position: relative;
+    bottom: 20px;
+}
+.total_meeting_title,
+.completed_meeting_title,
+.cancelled_meeting_title,
+.rescheduled_meeting_title {
+    font-weight: 300;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 25px;
+    background-color: #a8e65d;
+    position: relative;
+    bottom: 7px;
+}
+/*=============End Title==================*/
+
+/*============Filter Blocks===================*/
+.telemedicine_title {
+    font-weight: 400;
+    font-size: 25px;
+}
+.patient_count {
+    text-decoration: underline;
+    font-weight: 800;
+    font-size: 16px;
+    padding-top: 7px;
+}
+
+.btn_circle_filter,
+.btn_filter {
+    outline: none;
+    border: none;
+    border: 0.5px solid #d3d3d3;
+    transition: all 0.5s ease-out;
+    background: #fff;
+    position: relative;
+    bottom: 7px;
+    margin: 0px 2px;
+    cursor: pointer;
+}
+
+.btn_circle_filter {
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+}
+
+.btn_filter {
+    border-radius: 45px;
+    padding: 10px;
+}
+
+.btn_circle_filter:hover,
+.btn_filter:hover {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+/*=============End Filter Blocks==================*/
+
+/*============Patient Card===================*/
+.patient_card {
+    border-radius: 45px;
+    border: 0.5px solid #d3d3d3;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    height: 330px;
+    width: auto;
+    background: radial-gradient(
+            ellipse at center,
+            rgba(255, 255, 255, 0.5) 0%,
+            rgba(255, 255, 255, 0) 70%
+        ),
+        /* Ellipse */ linear-gradient(to bottom right, #f0f8a9, #cdef31);
+}
+
+.patient_card_photo {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+}
+
+.card_icon_camera,
+.card_icon_medical_record {
+    height: 40px;
+    width: 40px;
+}
+
+.arrow_down {
+    transform: rotate(268deg);
+    height: 15px;
+    width: 15px;
+}
+
+.subtitle_card {
+    position: relative;
+    right: 11px;
+    bottom: 2px;
+    margin: 0px 2px;
+    border-radius: 45px;
+    padding: 10px;
+}
+
+.card_custom_div {
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(3, 3, 3, 0.15) 0px 2px 6px 2px;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.card_icon_arrow {
+    position: relative;
+    bottom: 3px;
+    left: 9px;
+}
+
+.card_notify_icon {
+    position: relative;
+    bottom: 3px;
+    left: 7px;
+}
+
+.card_datetime_event {
+    position: relative;
+    bottom: 20px;
+}
+
+.card_btn {
+    outline: none;
+    border: none;
+    min-height: 45px;
+    min-width: 45px;
+    border-radius: 45px;
+    background-color: trnasparent;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.card_btn_circle {
+    outline: none;
+    border: none;
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    background-color: trnasparent;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding-top: 5px;
+}
+/*=============End Patient Card==================*/

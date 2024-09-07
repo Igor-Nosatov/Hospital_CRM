@@ -1,0 +1,10 @@
+
+
+    public function test_access_protected_route(): void
+    {
+        $this->assertNotEmpty($this->authToken);
+
+        $response = $this->get('/api/v1/patients', $this->getAuthHeaders());
+
+        $response->assertStatus(self::STATUS_CODE_OK);
+    }

@@ -1,0 +1,220 @@
+
+/*==============Filters======================*/
+.nav_icon{
+    padding:10px;
+    border-radius:100%;
+    margin-right:15px;
+
+}
+/*=======Search bar==========*/
+.input_search{
+    border-radius: 25px;
+    outline:none;
+    height: 47px;
+    width:100%;
+    border:1px solid transparent;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    padding:5px 15px 5px 50px;
+    cursor:pointer;
+}
+
+.btn_search{
+    outline:none;
+    border:1px solid transparent;
+    background-color: transparent;
+    position: relative;
+    top:12%;
+    left:14%;
+}
+
+/*=======End Search bar==========*/
+
+
+.select_period_time {
+    margin: 9px 8px 0px 8px;
+    height: 47px;
+    width: 120px !important;
+    border-radius: 25px;
+    border:none;
+    outline: none;
+    border: none;
+    background: none;
+    transition: all 0.5s ease-out;
+    margin-top:10px;
+}
+.select_period_time:hover {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.arrow_down {
+    transform: rotate(268deg);
+    height: 15px;
+    width: 15px;
+}
+.filter_img{
+    margin-top:18px;
+    height: 30px;
+}
+.add_btn {
+    margin-top: 7px;
+    height: 47px;
+    width: 200px !important;
+    border-radius: 25px;
+    font-size: 16px;
+    background: #dafc59;
+    padding: 2px 14px 5px 14px;
+    transition: all 0.3s ease-out;
+    outline: none;
+    border: none;
+    margin-left: 39%;
+}
+
+.add_btn:hover {
+    background: #dafc59;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.mark_plus {
+    top:2px;
+    position: relative;
+    font-size: 25px;
+}
+
+/*==============End Filters=====================*/
+
+
+/*==============Table========================*/
+.table_pt_fullname{
+position: relative;
+bottom:10px;
+}
+.table_title{
+    height:80px;
+    background-color: #e2e7f0;
+    text-align: left;
+    padding:25px 0px 25px 15px;
+    border-radius:15px;
+}
+.patient_avatar_img {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+}
+.score_img {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    border-radius: 100%;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    position:relative;
+    right:4px;
+    bottom:3px;
+}
+
+.score_img_table_bg {
+    background: #dafc59;
+}
+
+
+.title_id{
+    padding-left:20px;
+}
+
+.table_main_content{
+    text-align: left;
+    padding:25px 0px 25px 15px;
+    border-radius:15px;
+    border:1px solid #e2e7f0;
+    height:100px;
+}
+
+.table_img_icon{
+    height: 40px;
+    width:40px;
+    margin-top:10px;
+    cursor: pointer;
+}
+/*==============End Table=====================*/
+
+/*==============Tooltip ====================*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the text */
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*==============End Tooltip=====================*/
+
+/*==============Paginate========================*/
+
+.paginate_page{
+    font-size: 20px;
+}
+.arrow_left, .arrow_right {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.arrow_left {
+    transform: rotate(0deg);
+}
+
+.arrow_right {
+    transform: rotate(180deg);
+}
+
+/*==============End Paginate=====================*/
+
+@media (min-width: 1605px),
+       (min-width: 992px) and (max-width: 1197px) {
+    .filter_block {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+@media (min-width:  1200px) and (max-width: 1400px) {
+    .search_form{
+        position: relative;
+        left:30px;
+    }
+}
+
+@media (min-width: 220px) and (max-width: 991px) {
+    .add_btn {
+        margin-left: 0%;
+    }
+}

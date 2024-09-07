@@ -1,0 +1,125 @@
+.nav_style {
+    min-width: 395px;
+}
+
+.logo {
+    padding: 0px 0px 0px 0px;
+    height: auto;
+    width: 50px;
+}
+
+.nav_link {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 500;
+    font-size: 20px !important;
+    font-style: normal;
+    color: #1c1c1a !important;
+    padding: 10px 20px 10px 24px !important;
+    border-radius: 35px;
+    margin-right: 10px;
+    max-width: 180px;
+}
+
+.nav_icon {
+    height: 53px;
+    width: 53px;
+    padding: 12px 10px 10px 11px;
+    border-radius: 100%;
+    margin-right: 15px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.avatar_link {
+    position: relative !important;
+}
+
+.avatar_img {
+    height: 65px;
+    width: 65px;
+    border-radius: 100%;
+}
+
+.mobileMenu {
+    position: absolute;
+    top: 10.3vh;
+    left: 4.8vw;
+    width: 250px;
+    height: 300px;
+    background-color: white;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    border-radius: 10px;
+}
+.user_actions_menu {
+    position: relative;
+    right: 45px;
+}
+
+@media (min-width: 560px) and (max-width: 1399px) {
+    .user_actions_menu {
+        position: relative;
+        right: 20px;
+    }
+}
+
+@media (min-width: 713px) and (max-width: 981px) {
+    .mobileMenu {
+        top: 10.3vh;
+        left: 26px;
+    }
+    .user_actions_menu {
+        position: relative;
+        right: 20px;
+        top:10px;
+    }
+}
+
+@media (min-width: 560px) and (max-width: 712px) {
+    .mobileMenu {
+        top: 10.3vh;
+        left: 27px;
+    }
+    .user_actions_menu {
+        position: relative;
+        right: 15px;
+        top:10px;
+    }
+}
+
+@media (min-width: 542px) and (max-width: 550px) {
+    .user_actions_menu {
+        position: relative;
+        left: 0px;
+        top:10px;
+    }
+}
+@media (min-width: 511px) and (max-width: 541px) {
+    .user_actions_menu {
+        position: relative;
+        left: 12%;
+        top:10px;
+    }
+}
+@media (min-width: 433px) and (max-width: 443px) {
+    .user_actions_menu {
+        position: relative;
+        left: 56%;
+        top:10px;
+    }
+}
+
+@media (min-width: 275px) and (max-width: 430px) {
+    .mobileMenu {
+        top: 10.3vh;
+        left: 26px;
+    }
+    .user_actions_menu {
+        position: relative;
+        left: 100px;
+        top:10px;
+    }
+}

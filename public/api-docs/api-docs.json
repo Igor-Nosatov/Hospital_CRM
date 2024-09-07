@@ -1,0 +1,74 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Medical CRM API Documentation",
+      "termsOfService": "http://swagger.io/terms/",
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      },
+      "version": "3.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8080/api/v1",
+        "description": "Medical CRM API Documentation"
+      }
+    ],
+    "components": {
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    },
+    "paths": {
+        "/login": {
+            "$ref": "./swagger-resources/auth/login.json"
+        },
+        "/register": {
+            "$ref": "./swagger-resources/auth/register.json"
+        },
+        "/dashboard": {
+            "$ref": "./swagger-resources/dashboard/dashboard.json"
+        },
+        "/medical-analytics": {
+            "$ref": "./swagger-resources/medical_analytics/medical_analytics.json"
+        },
+        "/patients/basic-info": {
+            "$ref": "./swagger-resources/patients/patient_basic_info.json"
+        },
+        "/patients/patient-search": {
+            "$ref": "./swagger-resources/patients/patient_search.json"
+        },
+        "/patients": {
+            "$ref": "./swagger-resources/patients/patients.json"
+        },
+        "/patients/{patient}": {
+            "$ref": "./swagger-resources/patients/patientId.json"
+        },
+        "/settings": {
+            "$ref": "./swagger-resources/settings/settings.json"
+        },
+        "/payments": {
+            "$ref": "./swagger-resources/payments/payments.json"
+        },
+        "/payments/{payment}": {
+            "$ref": "./swagger-resources/payments/paymentId.json"
+        },
+        "/meetings": {
+            "$ref": "./swagger-resources/meetings/meetings.json"
+        },
+        "/meetings/{meetingId}": {
+            "$ref": "./swagger-resources/meetings/meetingId.json"
+        },
+        "/salary-report": {
+            "$ref": "./swagger-resources/salary_report/salary_report.json"
+        },
+        "/helpdesk": {
+            "$ref": "./swagger-resources/helpdesk/helpdesk.json"
+        }
+    }
+}

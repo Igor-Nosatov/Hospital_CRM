@@ -1,0 +1,103 @@
+{
+    "get": {
+      "summary": "Search for patients by name",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "patient_search",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "Barrows"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful retrieval of patient search results",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "example": 147
+                        },
+                        "first_name": {
+                          "type": "string",
+                          "example": "Hilma"
+                        },
+                        "last_name": {
+                          "type": "string",
+                          "example": "Barrows"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized access",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 401
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Unauthorized"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 500
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "An internal server error occurred."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,682 @@
+{
+    "get": {
+        "summary": "Retrieve patient profile by ID",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 12
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successful retrieval of patient profile",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Success"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "general_info": {
+                                            "type": "object",
+                                            "properties": {
+                                                "full_name": {
+                                                    "type": "string",
+                                                    "example": "Claudie Osinski"
+                                                },
+                                                "first_name": {
+                                                    "type": "string",
+                                                    "example": "Claudie"
+                                                },
+                                                "last_name": {
+                                                    "type": "string",
+                                                    "example": "Osinski"
+                                                },
+                                                "religion": {
+                                                    "type": "string",
+                                                    "example": "magnam"
+                                                },
+                                                "date_of_birth": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "1985-11-16T00:00:00.000000Z"
+                                                },
+                                                "address": {
+                                                    "type": "string",
+                                                    "example": "247 Rosenbaum Center Apt. 624\nEast Shirley, ID 66017"
+                                                },
+                                                "identity_code": {
+                                                    "type": "string",
+                                                    "example": "4d4fc63e-fba8-33fd-8599-b2845cab7c2d"
+                                                },
+                                                "phone_number": {
+                                                    "type": "string",
+                                                    "example": "+1-573-421-3797"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "lehner.kenyon@gmail.com"
+                                                },
+                                                "occupation": {
+                                                    "type": "string",
+                                                    "example": "consequatur"
+                                                },
+                                                "legal_representative_first_name": {
+                                                    "type": "string",
+                                                    "example": "Jakob"
+                                                },
+                                                "legal_representative_last_name": {
+                                                    "type": "string",
+                                                    "example": "Tromp"
+                                                },
+                                                "legal_representative_relationship": {
+                                                    "type": "string",
+                                                    "example": "cupiditate"
+                                                },
+                                                "legal_representative_phone_number": {
+                                                    "type": "string",
+                                                    "example": "1-430-402-1541"
+                                                },
+                                                "marital_status": {
+                                                    "type": "string",
+                                                    "example": "Widowed"
+                                                },
+                                                "status": {
+                                                    "type": "string",
+                                                    "example": "Active"
+                                                },
+                                                "height": {
+                                                    "type": "integer",
+                                                    "example": 164
+                                                },
+                                                "weight": {
+                                                    "type": "integer",
+                                                    "example": 66
+                                                },
+                                                "blood_pressure": {
+                                                    "type": "string",
+                                                    "example": "130/90"
+                                                },
+                                                "heart_rate": {
+                                                    "type": "integer",
+                                                    "example": 70
+                                                }
+                                            }
+                                        },
+                                        "laboratory_tests": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 9268
+                                                    },
+                                                    "date_of_medical_analysis": {
+                                                        "type": "string",
+                                                        "example": "28-04-2007"
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "example": "Harum veli..."
+                                                    },
+                                                    "file_path": {
+                                                        "type": "string",
+                                                        "example": "ea.pdf"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "disease_history": {
+                                            "type": "object",
+                                            "properties": {
+                                                "date_of_onset": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2021-12-21T00:00:00.000000Z"
+                                                },
+                                                "diagnosis": {
+                                                    "type": "string",
+                                                    "example": "Optio nisi illum voluptatem."
+                                                },
+                                                "test_results": {
+                                                    "type": "string",
+                                                    "example": "Quasi qui laudantium quis consequatur doloremque dolore fugiat. Itaque atque ut ad quo dolorem dolor magnam. Debitis fuga ea sunt ea id placeat eius. Error totam eos maiores dolorum. Fugiat delectus aut aut ullam esse nihil."
+                                                },
+                                                "symptoms": {
+                                                    "type": "string",
+                                                    "example": "Deleniti cupiditate odio cum ex reiciendis voluptatibus. Consequatur optio accusamus vero quasi qui ut. Excepturi harum culpa quos quod rerum et."
+                                                }
+                                            }
+                                        },
+                                        "treatment_plan": {
+                                            "type": "object",
+                                            "properties": {
+                                                "current_page": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "medicament_name": {
+                                                                "type": "string",
+                                                                "example": "quo"
+                                                            },
+                                                            "medication_dosage": {
+                                                                "type": "string",
+                                                                "example": "41 mg"
+                                                            },
+                                                            "medication_frequency": {
+                                                                "type": "string",
+                                                                "example": "5"
+                                                            },
+                                                            "medication_timing": {
+                                                                "type": "string",
+                                                                "example": "AtNight"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "first_page_url": {
+                                                    "type": "string",
+                                                    "example": "http://localhost:8080/api/v1/patients/12?page=1"
+                                                },
+                                                "from": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "last_page": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "last_page_url": {
+                                                    "type": "string",
+                                                    "example": "http://localhost:8080/api/v1/patients/12?page=1"
+                                                },
+                                                "links": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "url": {
+                                                                "type": "string",
+                                                                "example": null
+                                                            },
+                                                            "label": {
+                                                                "type": "string",
+                                                                "example": "&laquo; Previous"
+                                                            },
+                                                            "active": {
+                                                                "type": "boolean",
+                                                                "example": false
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "next_page_url": {
+                                                    "type": "string",
+                                                    "example": null
+                                                },
+                                                "path": {
+                                                    "type": "string",
+                                                    "example": "http://localhost:8080/api/v1/patients/12"
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "example": 4
+                                                },
+                                                "prev_page_url": {
+                                                    "type": "string",
+                                                    "example": null
+                                                },
+                                                "to": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "total": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                }
+                                            }
+                                        },
+                                        "appointment_list": {
+                                            "type": "object",
+                                            "properties": {
+                                                "current_page": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {}
+                                                },
+                                                "first_page_url": {
+                                                    "type": "string",
+                                                    "example": "http://localhost:8080/api/v1/patients/12?page=1"
+                                                },
+                                                "from": {
+                                                    "type": "integer",
+                                                    "example": null
+                                                },
+                                                "last_page": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "last_page_url": {
+                                                    "type": "string",
+                                                    "example": "http://localhost:8080/api/v1/patients/12?page=1"
+                                                },
+                                                "links": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "url": {
+                                                                "type": "string",
+                                                                "example": null
+                                                            },
+                                                            "label": {
+                                                                "type": "string",
+                                                                "example": "&laquo; Previous"
+                                                            },
+                                                            "active": {
+                                                                "type": "boolean",
+                                                                "example": false
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "next_page_url": {
+                                                    "type": "string",
+                                                    "example": null
+                                                },
+                                                "path": {
+                                                    "type": "string",
+                                                    "example": "http://localhost:8080/api/v1/patients/12"
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "example": 3
+                                                },
+                                                "prev_page_url": {
+                                                    "type": "string",
+                                                    "example": null
+                                                },
+                                                "to": {
+                                                    "type": "integer",
+                                                    "example": null
+                                                },
+                                                "total": {
+                                                    "type": "integer",
+                                                    "example": 0
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 401
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "404": {
+                "description": "Patient not found",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 404
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Patient not found"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 500
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "put": {
+        "summary": "Update patient information",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 172
+                },
+                "description": "Patient ID"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successful update of patient information",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Success"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 172
+                                        },
+                                        "first_name": {
+                                            "type": "string",
+                                            "example": "Jaylon"
+                                        },
+                                        "last_name": {
+                                            "type": "string",
+                                            "example": "Johnson"
+                                        },
+                                        "date_of_birth": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "example": "1993-02-10T00:00:00.000000Z"
+                                        },
+                                        "religion": {
+                                            "type": "string",
+                                            "example": "nemo12"
+                                        },
+                                        "occupation": {
+                                            "type": "string",
+                                            "example": "Software Developer"
+                                        },
+                                        "address": {
+                                            "type": "string",
+                                            "example": "41292 Ludie Shoals Suite 317\nNorth Triston, SC 20119"
+                                        },
+                                        "phone_number": {
+                                            "type": "string",
+                                            "example": "1-563-736-7957"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "cortiz@yahoo.com"
+                                        },
+                                        "identity_code": {
+                                            "type": "string",
+                                            "example": "0c222829-6b70-3442-82fb-d3a3d72cb9d9"
+                                        },
+                                        "legal_representative_first_name": {
+                                            "type": "string",
+                                            "example": "Hal"
+                                        },
+                                        "legal_representative_last_name": {
+                                            "type": "string",
+                                            "example": "Russel122121"
+                                        },
+                                        "legal_representative_relationship": {
+                                            "type": "string",
+                                            "example": "Guardian"
+                                        },
+                                        "legal_representative_phone_number": {
+                                            "type": "string",
+                                            "example": "1-234-567-8901"
+                                        },
+                                        "marital_status": {
+                                            "type": "string",
+                                            "example": "Widowed"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Blocked"
+                                        },
+                                        "insurance_id": {
+                                            "type": "integer",
+                                            "example": 89
+                                        },
+                                        "doctor_id": {
+                                            "type": "integer",
+                                            "example": 14
+                                        },
+                                        "deleted_at": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "example": null
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "example": "2024-08-27T09:40:24.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "example": "2024-08-27T18:29:51.000000Z"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 401
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 500
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "delete": {
+        "summary": "Delete a patient record by ID",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 1007
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successful deletion of patient record",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Data deleted successfully"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 401
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "404": {
+                "description": "Patient record not found",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 404
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Patient record not found"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 500
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

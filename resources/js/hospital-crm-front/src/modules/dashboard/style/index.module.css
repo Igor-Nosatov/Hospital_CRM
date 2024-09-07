@@ -1,0 +1,631 @@
+body {
+    font-family: "Urbanist", sans-serif !important;
+    font-style: normal !important;
+}
+
+.personal_score_card {
+    background: radial-gradient(ellipse at center,
+            rgba(255, 255, 255, 0.5) 0%,
+            rgba(255, 255, 255, 0) 70%),
+        linear-gradient(to bottom right, #f0f8a9, #cdef31);
+    border-radius: 35px;
+    height: 384px;
+    min-width: 390px;
+}
+
+.personal_score_card_title,
+.title_count_patients,
+.score_year_patients,
+.current_rating,
+.max_rating {
+    font-family: "Urbanist", sans-serif;
+    font-style: normal;
+}
+
+.personal_score_card_title,
+.current_rating {
+    font-weight: 600;
+    font-size: 20px !important;
+    color: #000;
+    padding: 5px 0 20px 26px;
+    margin-top: 5px !important;
+}
+
+.title_count_patients,
+.max_rating {
+    font-weight: 500;
+    font-size: 14px;
+    color: #5c6173;
+}
+
+.profile_photo {
+    height: 300px;
+    padding-left: 10px;
+    margin-top: 2px;
+}
+
+.custom_arrow_icon {
+    background-color: #fffffe;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    padding-left: 13px;
+    border-radius: 100%;
+    color: #000000;
+    text-decoration: none !important;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+        rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+        rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset !important;
+    cursor: pointer;
+}
+
+.margin_arrow_icon,
+.margin_arrow_icon_second {
+    position: relative;
+}
+
+.margin_arrow_icon {
+    left: 3%;
+}
+
+.margin_arrow_icon_second {
+    right: 1%;
+    margin-top: 8px;
+}
+
+.custom_margin {
+    margin-right: 7px;
+}
+
+.column_chart {
+    max-width: 190px !important;
+}
+
+.sub_title_count_patients_1,
+.sub_title_count_patients_2 {
+    position: relative;
+    left: 15%;
+}
+
+.sub_title_count_patients_1 {
+    top: 20%;
+}
+
+.sub_title_count_patients_2 {
+    bottom: 1%;
+}
+
+.count_number_patients,
+.star_rating,
+.icon_star_block,
+.lni_star_fill,
+.title_today_appointments,
+.adds_padding_arrow,
+.appointment_score_card,
+.patient_avatar,
+.patient_avatar_img,
+.appointment_score,
+.add_btn_plus,
+.count_total_patient,
+.count_total_offline_consult,
+.count_total_patient_online_consult,
+.lni_network,
+.lni_user,
+.lni_google_meet,
+.score_block,
+.score_numbers,
+.score_number_sub_title1,
+.patient_appointment_card,
+.patient_appointment_card_img,
+.card_lni_user,
+.card_lni_google_meet,
+.full_name_title,
+.years_title,
+.visit_count_title,
+.lni_pencil_alt,
+.notes_header,
+.lni_more_alt,
+.card_note,
+.img_event,
+.title_event,
+.desc_event,
+.calendar_date_block,
+.lni_calendar_appointment,
+.calendar_appointment_date,
+.patient_appointment_card_block,
+.appointment_calendar,
+.week_days,
+.day,
+.week_dates,
+.week_date {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-shadow: none;
+}
+
+.personal_score_card_title {
+    margin-top: 10px !important;
+}
+
+.score_year_patients {
+    padding: 5px;
+    border-radius: 5px;
+    background: #aecb28;
+    margin-right: 15px;
+}
+
+.star_rating {
+    background-color: #1b1e27;
+    border-radius: 15px;
+    padding: 10px 20px 6px 10px;
+    width: 85%;
+    position: relative;
+    left: 8%;
+    bottom: 1%;
+    height: 70px;
+}
+
+.current_rating {
+    font-weight: 500;
+    font-size: 45px !important;
+    color: #fff;
+    padding-left: 10px !important;
+    position: relative;
+    bottom: 15%;
+}
+
+.max_rating {
+    padding-top: 5px;
+    padding-left: 11px;
+}
+
+.icon_star_block {
+    padding-left: 10px;
+}
+
+.lni_star_fill {
+    color: #ecff5d;
+}
+
+.title_today_appointments {
+    margin-left: 100px;
+}
+
+.adds_padding_arrow {
+    margin-top: 5px !important;
+}
+
+.appointment_score_card {
+    border-radius: 25px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0 0 0 1px;
+    height: 359px;
+    min-width: 390px;
+}
+
+.patient_avatar {
+    position: relative;
+}
+
+.patient_avatar_img {
+    margin: 12px 0 0 12px;
+    border-radius: 100%;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+}
+
+.patient_avatar_img:nth-child(2) {
+    left: 0;
+}
+
+.patient_avatar_img:nth-child(3) {
+    left: 45px;
+}
+
+.patient_avatar_img:nth-child(4) {
+    left: 85px;
+}
+
+.patient_avatar_img:nth-child(5) {
+    left: 125px;
+}
+
+.patient_avatar_img:nth-child(6) {
+    left: 165px;
+}
+
+.appointment_score {
+    position: relative;
+    top: 25%;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.add_btn_plus {
+    border: none;
+    border-radius: 100%;
+    margin-top: 5px;
+    height: 60px;
+    width: 60px;
+    font-size: 35px;
+    cursor: pointer;
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0 0 0 1px;
+}
+
+.count_total_patient,
+.count_total_offline_consult,
+.count_total_patient_online_consult {
+    margin-top: 16px;
+    height: 158px;
+    min-width: 100%;
+    border-radius: 15px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0 0 0 1px;
+}
+
+.lni_network,
+.lni_user,
+.lni_google_meet {
+    padding: 10px;
+    border-radius: 100%;
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0 0 0 1px;
+    font-size: 25px;
+    color: #5f5e5f;
+    margin-bottom: 50px;
+}
+
+.lni_network {
+    background: #f3f4f9;
+}
+
+.lni_user {
+    background: #dafb59;
+}
+
+.lni_google_meet {
+    background: #bdc7fe;
+}
+
+.score_block {
+    position: relative;
+    bottom: 20px;
+}
+
+.score_numbers {
+    font-size: 55px;
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+.score_number_sub_title1 {
+    margin: 16px 0 0;
+    font-size: 18px;
+}
+
+.patient_appointment_card {
+    padding: 19px 2px 14.5px 2px;
+    border-radius: 25px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0 0 0 1px;
+    min-width: 390px;
+    font-size: 16px;
+}
+
+.patient_appointment_card_img {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+}
+
+.card_lni_user,
+.card_lni_google_meet {
+    position: relative;
+    font-size: 16px;
+    color: #5f5e5f;
+    padding: 5px;
+    top: 35%;
+    right: 8%;
+    border-radius: 100%;
+}
+
+.card_lni_google_meet {
+    background: #bdc7fe;
+}
+
+.card_lni_user {
+    background: #dafb59;
+}
+
+.full_name_title {
+    position: relative;
+    top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000;
+    font-weight: 600px;
+}
+
+.years_title {
+    position: relative;
+    top: 10px;
+    color: #000;
+    font-weight: 500;
+}
+
+.visit_count_title {
+    position: relative;
+    top: 10px;
+    color: #7c7e86;
+    font-weight: 700;
+    padding-left: 15px;
+}
+
+.lni_pencil_alt {
+    margin-top: 12px;
+    font-size: 25px;
+    padding: 14px;
+    color: #5f5e5f;
+    border-radius: 100%;
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0 0 0 1px;
+}
+
+.notes_header {
+    height: 65px;
+}
+
+.lni_more_alt {
+    color: #5c6173;
+    padding: 10px;
+    border-radius: 100%;
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0 0 0 1px;
+}
+
+.card_note {
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0 0 0 1px;
+    border-radius: 25px;
+    padding: 7px 0 0;
+    height: 307px;
+    width: 100%;
+}
+
+.img_event {
+    width: 100%;
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0 0 0 1px;
+    height: auto;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.title_event {
+    font-weight: 500px !important;
+    position: relative;
+    bottom: 27px;
+    font-size: 16px;
+}
+
+.desc_event {
+    padding: 20px 0 31px;
+}
+
+.calendar_date_block {
+    border-radius: 35px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0 0 0 1px;
+    height: 50px;
+}
+
+.lni_calendar_appointment {
+    font-size: 30px;
+    padding: 6px 10px 0;
+    color: #5c6173;
+    text-align: center;
+    background-color: #fff !important;
+}
+
+.calendar_appointment_date {
+    font-size: 16px;
+    color: #000;
+    position: relative;
+    padding-right: 10px;
+    bottom: 5px;
+}
+
+.wrapper_calendar {
+    display: grid;
+    place-items: center;
+}
+
+.appointment_calendar {
+    border-radius: 35px;
+    height: 418px;
+    width: 385px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0 0 0 1px;
+}
+
+.week_days {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+    padding-left: 20px;
+}
+
+.day {
+    float: left;
+}
+
+.day a {
+    display: block;
+    text-align: center;
+    padding: 14px 10px;
+    text-decoration: none;
+    color: #5c6173;
+    text-transform: uppercase;
+}
+
+.day a:hover {
+    background-color: #fff;
+}
+
+.week_dates {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    padding-left: 25px !important;
+}
+
+.week_date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    background: #dce2fe;
+    border-radius: 100%;
+    margin: 2px;
+}
+
+@media (min-width: 1801px) {
+    .wrapper_event_note {
+        padding-right: 3%;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1800px) {
+    .patient_appointment_card {
+        height: 114.54px;
+    }
+
+    .wrapper_event_note {
+        margin-top: 3.8%;
+    }
+}
+
+@media (min-width: 1074px) and (max-width: 1399px) {
+    .card_note {
+        height: 300px;
+        margin-bottom: 20px;
+        min-width: 200px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1073px) {
+    .card_lni_user {
+        display: none;
+    }
+
+    .score_number_sub_title1 {
+        position: relative;
+        right: 10px;
+    }
+
+    .score_numbers {
+        padding-top: 10px;
+        font-size: 45px;
+    }
+
+    .full_name_title {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .patient_appointment_card {
+        position: relative;
+        left: 4.8%;
+        font-size: 14px;
+        width: 95%;
+    }
+
+    .personal_score_card{
+        position: relative;
+        left: 4%;
+        font-size: 14px;
+        width: 95%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1399px) {
+    .personal_score_card {
+        height: 420px;
+    }
+    .score_year_patients{
+        top:40px;
+        position: relative;
+    }
+    .count_number_patients,.sub_title_count_patients_1{
+        margin-top:40px;
+    }
+
+    .sub_title_count_patients_2{
+        margin-top:12px;
+    }
+    .profile_photo {
+        width: 100%;
+        position: relative;
+        top: 37px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1399px) {
+    .personal_score_card {
+        height: 420px;
+    }
+
+    .profile_photo {
+        width: fit-content;
+        position: relative;
+        top: 37px;
+    }
+}
+
+
+@media (min-width: 666px) and (max-width: 970px) {
+    .card_note {
+        margin-bottom: 10px;
+        height: auto;
+    }
+}
+
+
+@media (min-width: 220px) and (max-width: 665px) {
+    .score_numbers {
+        font-size: 45px;
+    }
+
+    .score_number_sub_title1 {
+        font-size: 16px;
+    }
+
+    .full_name_title {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .patient_appointment_card {
+        font-size: 14px;
+    }
+
+    .card_lni_user {
+        display: none;
+    }
+
+    .card_note {
+        margin-bottom: 10px;
+        height: auto;
+        min-width: 390px;
+    }
+}
+
+@media (max-width: 991px) {
+    .wrapper_calendar {
+        display: none;
+    }
+}

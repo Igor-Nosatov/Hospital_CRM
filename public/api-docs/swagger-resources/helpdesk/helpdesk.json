@@ -1,0 +1,148 @@
+{
+    "post": {
+      "summary": "Create a new helpdesk entry",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "asdad"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "Occaecati aliquam distinctio qui. Earum reiciendis corrupti veritatis ut amet vitae. Quaerat porro provident voluptas a nihil quo."
+                },
+                "doctor_id": {
+                  "type": "integer",
+                  "example": 1
+                }
+              },
+              "required": ["title", "description", "doctor_id"]
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Successful creation of a helpdesk entry",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "example": "asdad"
+                      },
+                      "description": {
+                        "type": "string",
+                        "example": "Occaecati aliquam distinctio qui. Earum reiciendis corrupti veritatis ut amet vitae. Quaerat porro provident voluptas a nihil quo."
+                      },
+                      "doctor_id": {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2024-08-27T10:22:37.000000Z"
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2024-08-27T10:22:37.000000Z"
+                      },
+                      "id": {
+                        "type": "integer",
+                        "example": 1002
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad request due to invalid input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 400
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Invalid input data"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized access",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 401
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Unauthorized"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 500
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "An internal server error occurred."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

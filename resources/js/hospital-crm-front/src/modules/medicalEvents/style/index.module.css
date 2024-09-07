@@ -1,0 +1,173 @@
+
+.conference_desc_block_1 {
+    margin-top: 10px !important;
+}
+.conference_desc_block_2 {
+    margin-top: 115px !important;
+}
+
+.event_card {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 25px;
+}
+
+.event_card_bg {
+    background-image: url(../../../assets/img/bg_medicine.jpg);
+    height: 300px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.lector_photo_block {
+    height: 130px;
+    width: 130px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+
+.lector_photo {
+    height: 150px;
+    width: 120px;
+    position: relative;
+    top: 4%;
+    left: 4%;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+.event_status {
+    border-radius: 25px;
+    border: 1px solid #7ef567;
+    padding: 5px 20px;
+    background: #7ef567;
+    width: 150px;
+    height: 40px;
+}
+
+.event_title {
+    text-shadow: 3px 4px 7px rgba(81, 67, 21, 0.8);
+}
+
+.block_detail {
+    padding-top:20px;
+    padding-left: 8%;
+}
+
+.btn_detail {
+    border-radius: 25px;
+    border: 1px solid #7ef567;
+    padding: 8px 20px;
+    height: 45px;
+    background: #7ef567;
+    transition: all 0.5s ease-out;
+    text-decoration: none;
+}
+
+.btn_event_register {
+    background: #a8f48e;
+    border: 1px solid #a8f48e;
+    border-radius: 15px;
+    padding: 14px 60px;
+    border: 1px solid #7ef567;
+    height: 50px !important;
+}
+
+.event_bottom_text {
+    position: relative;
+    top: 115px;
+}
+
+.event_subtitle {
+    position: relative;
+    top: 7%;
+}
+
+.event_subtitle_1 {
+    position: relative;
+    bottom: 4%;
+}
+
+/*==============Paginate========================*/
+
+.paginate_page {
+    font-size: 20px;
+}
+
+.arrow_left,
+.arrow_right {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.arrow_left {
+    transform: rotate(0deg);
+}
+
+.arrow_right {
+    transform: rotate(180deg);
+}
+
+/*==============End Paginate=====================*/
+
+/*==============Event Card Detail================*/
+
+.agenda_item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form_control {
+    padding: 15x;
+    height: 50px;
+    border-radius: 15px !important;
+}
+
+
+@media screen and (min-width: 1214px) and (max-width: 1273px) {
+    .event_card_bg {
+        height: 320px;
+    }
+    .lector_photo_block{
+        margin-top:20px;
+        margin-bottom: 0px;
+    }
+    .event_status {
+       margin-top:20px;
+    }
+
+    .conference_desc_block_2 {
+        margin-top: 135px !important;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1213px) {
+    .event_card_bg {
+        height: 360px;
+    }
+    .lector_photo_block{
+        margin-top:40px;
+        margin-bottom: 0px;
+    }
+    .event_status {
+        margin-top:20px;
+     }
+     .conference_desc_block_2 {
+        margin-top: 145px !important;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 991px) {
+    .event_card_bg {
+        border-top-right-radius: 25px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .conference_desc_block_2 {
+        margin-top: 35px !important;
+    }
+}

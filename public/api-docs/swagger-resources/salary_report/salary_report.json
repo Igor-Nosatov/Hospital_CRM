@@ -1,0 +1,124 @@
+{
+    "get": {
+      "summary": "Retrieve a list of salary reports",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful retrieval of salary reports",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "salary_list_by_month": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "example": 92
+                            },
+                            "amount": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 505
+                            },
+                            "payment_date": {
+                              "type": "string",
+                              "example": "25-08-2024"
+                            },
+                            "payment_method": {
+                              "type": "string",
+                              "example": "Discover Card"
+                            },
+                            "currency": {
+                              "type": "string",
+                              "example": "USD"
+                            },
+                            "comments": {
+                              "type": "string",
+                              "example": "Ipsa repellat beatae voluptatibus suscipit quibusdam molestiae."
+                            },
+                            "patient_full_name": {
+                              "type": "string",
+                              "example": "Stella Denesik"
+                            },
+                            "company_fee": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 202
+                            },
+                            "doctor_wages": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 303
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized access",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 401
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Unauthorized"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 500
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "An internal server error occurred."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

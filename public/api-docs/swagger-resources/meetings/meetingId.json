@@ -1,0 +1,344 @@
+{
+    "get": {
+      "summary": "Retrieve meeting details by ID",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "meetingId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 43
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful retrieval of meeting details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "example": 43
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "Quam harum est temporibus."
+                        },
+                        "result": {
+                          "type": "string",
+                          "example": "Cupiditate delectus aut ut officia. Animi quia quia quasi expedita. Rem voluptatem et quae ut qui repellendus sed."
+                        },
+                        "written_entities": {
+                          "type": "string",
+                          "example": "Vel eaque omnis dolores at dolor aut nihil voluptas."
+                        },
+                        "date": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-23T00:00:00.000000Z"
+                        },
+                        "meeting_status": {
+                          "type": "string",
+                          "example": "Completed"
+                        },
+                        "appointment_id": {
+                          "type": "integer",
+                          "example": 948
+                        },
+                        "patient_id": {
+                          "type": "integer",
+                          "example": 280
+                        },
+                        "doctor_id": {
+                          "type": "integer",
+                          "example": 1
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-27T09:41:13.000000Z"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-27T09:41:13.000000Z"
+                        },
+                        "deleted_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": null
+                        },
+                        "patient": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "example": 280
+                            }
+                          }
+                        },
+                        "doctor": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "example": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized access",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 401
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Unauthorized"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 500
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "An internal server error occurred."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "put": {
+        "summary": "Update meeting details by ID",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "meetingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "example": 277
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "example": "test111"
+                  },
+                  "result": {
+                    "type": "string",
+                    "example": "1111"
+                  },
+                  "written_entities": {
+                    "type": "string",
+                    "example": "12312312312"
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2024-05-12T10:43:14.000000Z"
+                  },
+                  "meeting_status": {
+                    "type": "string",
+                    "example": "Overdue"
+                  },
+                  "appointment_id": {
+                    "type": "integer",
+                    "example": 749
+                  },
+                  "patient_id": {
+                    "type": "integer",
+                    "example": 482
+                  },
+                  "doctor_id": {
+                    "type": "integer",
+                    "example": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful update of meeting details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "example": 277
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "test111"
+                        },
+                        "result": {
+                          "type": "string",
+                          "example": "1111"
+                        },
+                        "written_entities": {
+                          "type": "string",
+                          "example": "12312312312"
+                        },
+                        "date": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-05-12T10:43:14.000000Z"
+                        },
+                        "meeting_status": {
+                          "type": "string",
+                          "example": "Overdue"
+                        },
+                        "appointment_id": {
+                          "type": "integer",
+                          "example": 749
+                        },
+                        "patient_id": {
+                          "type": "integer",
+                          "example": 482
+                        },
+                        "doctor_id": {
+                          "type": "integer",
+                          "example": 1
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-27T09:41:13.000000Z"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-27T13:01:20.000000Z"
+                        },
+                        "deleted_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": null
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 401
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Unauthorized"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 500
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "An internal server error occurred."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  }

@@ -1,0 +1,169 @@
+{
+    "get": {
+      "summary": "Retrieve basic information of a patient",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful retrieval of patient basic information",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "example": 42
+                        },
+                        "first_name": {
+                          "type": "string",
+                          "example": "Maxime"
+                        },
+                        "last_name": {
+                          "type": "string",
+                          "example": "Brakus"
+                        },
+                        "date_of_birth": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2007-08-01T00:00:00.000000Z"
+                        },
+                        "religion": {
+                          "type": "string",
+                          "example": "illo"
+                        },
+                        "occupation": {
+                          "type": "string",
+                          "example": "at"
+                        },
+                        "address": {
+                          "type": "string",
+                          "example": "1836 Purdy Crest\nNew Kyrafurt, IN 28080"
+                        },
+                        "phone_number": {
+                          "type": "string",
+                          "example": "805.538.1800"
+                        },
+                        "email": {
+                          "type": "string",
+                          "example": "aubrey.volkman@yahoo.com"
+                        },
+                        "identity_code": {
+                          "type": "string",
+                          "example": "98684a5a-8e74-3a5e-93d6-f411c8f4879c"
+                        },
+                        "legal_representative_first_name": {
+                          "type": "string",
+                          "example": "Allison"
+                        },
+                        "legal_representative_last_name": {
+                          "type": "string",
+                          "example": "Hintz"
+                        },
+                        "legal_representative_relationship": {
+                          "type": "string",
+                          "example": "voluptatem"
+                        },
+                        "legal_representative_phone_number": {
+                          "type": "string",
+                          "example": "+19563609370"
+                        },
+                        "marital_status": {
+                          "type": "string",
+                          "example": "Widowed"
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "Active"
+                        },
+                        "insurance_id": {
+                          "type": "integer",
+                          "example": 18
+                        },
+                        "doctor_id": {
+                          "type": "integer",
+                          "example": 1
+                        },
+                        "deleted_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "nullable": true,
+                          "example": null
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-27T09:40:24.000000Z"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-27T09:40:24.000000Z"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized access",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 401
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Unauthorized"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 500
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "An internal server error occurred."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

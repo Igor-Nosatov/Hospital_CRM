@@ -1,0 +1,3237 @@
+{
+	"info": {
+		"_postman_id": "6e5bb2fe-6125-43d5-b55d-5f3c811d9573",
+		"name": "Hospital_CRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "562876"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "POST_LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "medicalCrmTest@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "medicalCrmTestEDCAE221212",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_LOGOUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|CnxqNP4sOkIcELwitMy8wLhbGWYRVH9ANFHQkxPL09bec0b5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "medicalCrmTest",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "medicalCrmTest@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "medicalCrmTestEDCAE221212",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "CREATE_PATIENT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|zSEJCY4uNPj3djYakqeBT2mxJXX936kMqb3SN5E0343f1686",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"John\", \n    \"last_name\": \"Doe\",\n    \"date_of_birth\": \"1985-06-15\",\n    \"religion\": \"Christianity\",\n    \"occupation\": \"Software Engineer\",\n    \"address\": \"123 Main St, Anytown, USA\",\n    \"phone_number\": \"123-456-7890\",\n    \"email\": \"john.doe@example.com\",\n    \"identity_code\": \"ID123456789\",\n    \"legal_representative_first_name\": \"Jane\",\n    \"legal_representative_last_name\": \"Doe\",\n    \"legal_representative_relationship\": \"Spouse\",\n    \"legal_representative_phone_number\": \"098-765-4321\",\n    \"marital_status\": \"Married\",\n    \"doctor_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_PATIENT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|CNT0AivYhhupeGqWOmDP6YXKL4MS6eIOg9S2BkF073b780c2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": " John",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": " Doe",
+									"type": "text"
+								},
+								{
+									"key": "date_of_birth",
+									"value": " 1990-01-01",
+									"type": "text"
+								},
+								{
+									"key": "religion",
+									"value": " Christianity",
+									"type": "text"
+								},
+								{
+									"key": "occupation",
+									"value": " Software Engineer",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": " 123 Main Street",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": " +1234567890",
+									"type": "text"
+								},
+								{
+									"key": "barcode",
+									"value": " 123456789",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": " Male",
+									"type": "text"
+								},
+								{
+									"key": "marital_status",
+									"value": " Single",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": " active",
+									"type": "text"
+								},
+								{
+									"key": "insurance_id",
+									"value": " 1",
+									"type": "text"
+								},
+								{
+									"key": "legal_representative_id",
+									"value": " 1",
+									"type": "text"
+								},
+								{
+									"key": "legal_representative_first_name",
+									"value": " Jane121212",
+									"type": "text"
+								},
+								{
+									"key": "legal_representative_last_name",
+									"value": " Doe",
+									"type": "text"
+								},
+								{
+									"key": "legal_representative_relationship",
+									"value": " Spouse",
+									"type": "text"
+								},
+								{
+									"key": "legal_representative_phone_number",
+									"value": " +1234567890",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients?page=1&search=Elouise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "search",
+									"value": "Elouise"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_PATIENT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|91y1SmayL23A6PWupHefEHayX6W94X9sgjDdGrAJ282a11f2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients/5 ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients",
+								"5 "
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT_PATIENT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|LDStTlZwQ88AkLYELKmcZgthDmI6tDAJnThJy3focfdbdc76",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Jaylon\",\n    \"last_name\": \"Johnson\",\n    \"date_of_birth\": \"1993-02-10\",\n    \"religion\": \"nemo12\",\n    \"occupation\": \"Software Developer\",\n    \"address\": \"41292 Ludie Shoals Suite 317\\nNorth Triston, SC 20119\",\n    \"phone_number\": \"1-563-736-7957\",\n    \"legal_representative_first_name\": \"Hal\",\n    \"legal_representative_last_name\": \"Russel122121\",\n    \"legal_representative_relationship\": \"Guardian\",\n    \"legal_representative_phone_number\": \"1-234-567-8901\",\n    \"marital_status\": \"Widowed\",\n    \"status\": \"Blocked\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients/172?_method=PUT ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients",
+								"172"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SHOW_PATIENT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|LDStTlZwQ88AkLYELKmcZgthDmI6tDAJnThJy3focfdbdc76",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients/12 ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients",
+								"12 "
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATIENT_SEARCH",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "19|hajx8h53bWZWGumTljKhbbyZzduIKsyxgRyCHeCE72e98d87",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patient/patient-search?patient_search=Barrows",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patient",
+								"patient-search"
+							],
+							"query": [
+								{
+									"key": "patient_search",
+									"value": "Barrows"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_PATIENT_BASIC_INFO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "19|hajx8h53bWZWGumTljKhbbyZzduIKsyxgRyCHeCE72e98d87",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patient/basic-info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patient",
+								"basic-info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "DOCTOR_CREATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgv0cGo0qxd88wZ8p566ouobMHIsCGU2GexcOcuw9b744a6f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "working_mode",
+									"value": "offline",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": " John",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": " Doe",
+									"type": "text"
+								},
+								{
+									"key": "date_of_birth",
+									"value": " 1990-01-01",
+									"type": "text"
+								},
+								{
+									"key": "religion",
+									"value": " Christianity",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": " 123 Main Street",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "+1-212-456-78909",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "+1-212-456-78905",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "+1-212-456-78907",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": " Male",
+									"type": "text"
+								},
+								{
+									"key": "marital_status",
+									"value": " Single",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": " active",
+									"type": "text"
+								},
+								{
+									"key": "speciality_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "department_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "nationality_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "country_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/doctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"doctor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SHOW_DOCTOR_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|LDStTlZwQ88AkLYELKmcZgthDmI6tDAJnThJy3focfdbdc76",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/doctor/1 ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"doctor",
+								"1 "
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SHOW_DOCTOR_BY_ID_PATIENT_VISITS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|oHgEyfuap6OrlXHPdRijsYmgdNtvFbWsaqCdelUOed500cf7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/doctor/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"doctor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DOCTOR_DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|91y1SmayL23A6PWupHefEHayX6W94X9sgjDdGrAJ282a11f2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/doctor/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"doctor",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DOCTOR_UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|LDStTlZwQ88AkLYELKmcZgthDmI6tDAJnThJy3focfdbdc76",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n\"first_name\": \"Tim\",\n    \"last_name\": \"Lemke233333111111\",\n    \"address\": \"97487 Rolando Islands\\nPort Amari, SD 31620\",\n    \"email\": \"garfield78@example.net\",\n    \"phone_number\": \"805.428.2272\",\n    \"specialty\": \"Cardiac Electrophysiologist\",\n    \"date_of_birth\": \"1970-04-09T00:00:00.000000Z\",\n    \"religion\": \"eaque\",\n    \"biography\": \"Quas enim qui consectetur nisi. Ex quos ut voluptatem eligendi praesentium reiciendis. Impedit dolorem consequatur reprehenderit rerum aliquid provident.\",\n    \"education\": [\n        \"Tenetur dolores sit at in.\",\n        \"Amet earum blanditiis rerum laboriosam.\"\n    ],\n    \"experience\": [\n        \"Doloribus et accusamus eos.\",\n        \"Quod sed aut nulla neque.\"\n    ],\n    \"languages\": \"dddddddd\",\n    \"current_location\": [\n        \"Wiegandland\",\n        \"Jaskolskiland\"\n    ],\n    \"certifications\": [\n        \"Fugit nam quis quia aspernatur.\",\n        \"Dolorem nam quisquam ipsam in ea.\"\n    ],\n    \"medical_license\": [\n        \"Nihil ea ut nemo unde quibusdam.\",\n        \"Quia animi eligendi minus.\"\n    ],\n    \"professional_memberships\": [\n        \"Walter LLC\",\n        \"Cremin Inc\"\n    ],\n    \"awards\": [\n        \"Necessitatibus occaecati laudantium inventore ex rerum sapiente.\",\n        \"Facere omnis nihil molestiae possimus et excepturi.\"\n    ],\n    \"publications\": [\n        \"Blanditiis eum qui et nesciunt et.\",\n        \"Et est est molestiae non autem quia accusamus non.\"\n    ],\n    \"research_interests\": [\n        \"quam\",\n        \"expedita\"\n    ]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/doctor/1?_method=PUT ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"doctor",
+								"1"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT "
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "CREATE_APPOINTMENT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|zSEJCY4uNPj3djYakqeBT2mxJXX936kMqb3SN5E0343f1686",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"appointment_datetime\": \"2024-03-22 15:30:00\",\n    \"reason\": \"test\",\n    \"symptoms\": \"test\",\n    \"notes\": \"test\",\n    \"status\": \"active\",\n    \"reminder_datetime\": \"2024-03-21 15:30:00\",\n    \"type\": \"Online\",\n    \"patient_id\": 1,\n    \"doctor_id\": 1,\n    \"medical_service_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL APPOINTMENTS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|okBFMIc4JyVbIa9uyQuP19PQs0l7hne6q15JQiC3a8efc256",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments"
+							],
+							"query": [
+								{
+									"key": "selected_month",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "selected_year",
+									"value": "2024",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_APPOINTMENT_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|F9kmhdR54c04RFfMhPcjH6RTZQEAf5BgFxTHXFsl94ab5acf",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_APPOINTMENT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|LDStTlZwQ88AkLYELKmcZgthDmI6tDAJnThJy3focfdbdc76",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"appointment_datetime\": \"2024-03-22 15:30:00\",\n    \"reason\": \"test\",\n    \"symptoms\": \"test\",\n    \"notes\": \"test\",\n    \"status\": \"active\",\n    \"reminder_datetime\": \"2024-03-21 15:30:00\",\n    \"type\": \"Online\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments/1319?_method=PUT ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								"1319"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_APPOINTMENT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|91y1SmayL23A6PWupHefEHayX6W94X9sgjDdGrAJ282a11f2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments/1 ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								"1 "
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "APPOINTMENT_LIST_GET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|3gdfb9GMndiIZyk51h7Ly4zIDXdtjDlKN9GtAZLT0253072e",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/appointment-list?patientId=12",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"appointment-list"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "2024-05-23",
+									"disabled": true
+								},
+								{
+									"key": "patientId",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "CREATE_ROLE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|qWLTPpusAM5hRQX580aoPyphG4ovOEx2tad7H2Zj01b8a00d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/role",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL ROLES",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|qWLTPpusAM5hRQX580aoPyphG4ovOEx2tad7H2Zj01b8a00d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/role",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_ROLE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wQ1bIxXe4OM0xywMCswZymTd7A7qYSCItaVMUgGhb5753b80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/role/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"role",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permission",
+			"item": [
+				{
+					"name": "CREATE_PERMISSION",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|qWLTPpusAM5hRQX580aoPyphG4ovOEx2tad7H2Zj01b8a00d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/permission",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL PERMISSIONS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|qWLTPpusAM5hRQX580aoPyphG4ovOEx2tad7H2Zj01b8a00d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/permission",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_PERMISSON",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|qWLTPpusAM5hRQX580aoPyphG4ovOEx2tad7H2Zj01b8a00d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/permission/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"permission",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Diagnose",
+			"item": [
+				{
+					"name": "CREATE_DIAGNOSE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|EBMQfe81H3NicxMoTJd7BInY0qdebwLugclB1W4Jda6a38b8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/diagnose",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"diagnose"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL DIAGNOSE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|EBMQfe81H3NicxMoTJd7BInY0qdebwLugclB1W4Jda6a38b8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/diagnose",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"diagnose"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_DIAGNOSE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|EBMQfe81H3NicxMoTJd7BInY0qdebwLugclB1W4Jda6a38b8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/diagnose/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"diagnose",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Setting",
+			"item": [
+				{
+					"name": "GET_ALL SETTINGS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "16|ztrRPza4aD5fCtXzBWHzj4TrR55GEAczyBfURNY37ff1c6d5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/settings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_SETTING",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "16|ztrRPza4aD5fCtXzBWHzj4TrR55GEAczyBfURNY37ff1c6d5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"created_at\": null,\n    \"deleted_at\": null,\n    \"id\": 34,\n    \"setting_desc\": \"Get notifications for upcoming appointments.\",\n    \"setting_name\": \"Upcoming Appointment\",\n    \"setting_status\": \"Disabled\",\n    \"setting_type\": \"Notification\",\n    \"updated_at\": \"2024-06-08T15:45:41.000000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/settings/1?_method=PUT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"settings",
+								"1"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "CREATE_PAYMENT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|fPuPgvOSkEMKQKkYJClcN4wlh7MQIlbPstmiGrAG13002dde",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": " 100",
+									"type": "text"
+								},
+								{
+									"key": "payment_date",
+									"value": " 2024-03-20",
+									"type": "text"
+								},
+								{
+									"key": "payment_status",
+									"value": "Processed",
+									"type": "text"
+								},
+								{
+									"key": "payment_method",
+									"value": " credit_card",
+									"type": "text"
+								},
+								{
+									"key": "transaction_id",
+									"value": " 123456789",
+									"type": "text"
+								},
+								{
+									"key": "card_expiry_date",
+									"value": " 2025-12-31",
+									"type": "text"
+								},
+								{
+									"key": "comments",
+									"value": " Payment for medical services",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "USD",
+									"type": "text"
+								},
+								{
+									"key": "patient_id",
+									"value": " 1",
+									"type": "text"
+								},
+								{
+									"key": "doctor_id",
+									"value": " 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_PAYMENTS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|fPuPgvOSkEMKQKkYJClcN4wlh7MQIlbPstmiGrAG13002dde",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_PAYMENT_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|fPuPgvOSkEMKQKkYJClcN4wlh7MQIlbPstmiGrAG13002dde",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/payments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PatientVisit",
+			"item": [
+				{
+					"name": "CREATE_PATIENT_VISIT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wQ1bIxXe4OM0xywMCswZymTd7A7qYSCItaVMUgGhb5753b80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "visit_date",
+									"value": "2024-01-01",
+									"type": "text"
+								},
+								{
+									"key": "complaints",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "symptoms",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "treatment",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "notes",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "diagnose_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "payment_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "patient_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "doctor_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "insurance_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/visits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"visits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL PATIENT_VISITS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "19|hajx8h53bWZWGumTljKhbbyZzduIKsyxgRyCHeCE72e98d87",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/visits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"visits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_PATIENT_VISIT_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wQ1bIxXe4OM0xywMCswZymTd7A7qYSCItaVMUgGhb5753b80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/visits/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"visits",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_PATIENT_VISIT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wQ1bIxXe4OM0xywMCswZymTd7A7qYSCItaVMUgGhb5753b80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "visit_date",
+									"value": "2024-01-01",
+									"type": "text"
+								},
+								{
+									"key": "complaints",
+									"value": "test3333",
+									"type": "text"
+								},
+								{
+									"key": "symptoms",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "treatment",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "notes",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "diagnose_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "payment_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "patient_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "doctor_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "insurance_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/visits/1?_method=PUT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"visits",
+								"1"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_PATIENT_VISIT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wQ1bIxXe4OM0xywMCswZymTd7A7qYSCItaVMUgGhb5753b80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/visits/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"visits",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meeting",
+			"item": [
+				{
+					"name": "CREATE_MEETING",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|zSEJCY4uNPj3djYakqeBT2mxJXX936kMqb3SN5E0343f1686",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"test\",\n    \"result\": \"test\",\n    \"written_entities\": \"test\",\n    \"date\": \"2024-05-03 10:43:14\", \n    \"meeting_status\": \"Active\",\n    \"appointment_id\": 236,\n    \"patient_id\": 1,\n    \"doctor_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/meetings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"meetings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL MEETING",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "11|RxemABnBHCS6dqlmjZKdADJqJeckTKU92e9ZzW6j01d86010",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/meetings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"meetings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_MEETING_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "11|RxemABnBHCS6dqlmjZKdADJqJeckTKU92e9ZzW6j01d86010",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/meetings/277",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"meetings",
+								"277"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_MEETING",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dsp21T4qNlXd2nD0kW5D6KIZUoWcWEnU5feSrCKs5ca12f38",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"test111\",\n    \"result\": \"1111\",\n    \"written_entities\": \"12312312312\",\n    \"date\": \"2024-05-12 10:43:14\",\n    \"meeting_status\": \"Active\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/meetings/277",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"meetings",
+								"277"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Receipt",
+			"item": [
+				{
+					"name": "CREATE_RECEIPT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wQ1bIxXe4OM0xywMCswZymTd7A7qYSCItaVMUgGhb5753b80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "appointment_datetime",
+									"value": "2024-03-22 15:30:00",
+									"type": "text"
+								},
+								{
+									"key": "reason",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "symptoms",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "notes",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text"
+								},
+								{
+									"key": "reminder_datetime",
+									"value": "2024-03-21 15:30:00",
+									"type": "text"
+								},
+								{
+									"key": "patient_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "doctor_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/receipts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"receipts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_RECEIPTS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wQ1bIxXe4OM0xywMCswZymTd7A7qYSCItaVMUgGhb5753b80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/receipts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"receipts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_RECEIPT_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wQ1bIxXe4OM0xywMCswZymTd7A7qYSCItaVMUgGhb5753b80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/receipts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"receipts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_RECEIPT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wQ1bIxXe4OM0xywMCswZymTd7A7qYSCItaVMUgGhb5753b80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "appointment_datetime",
+									"value": "2024-03-22 15:30:00",
+									"type": "text"
+								},
+								{
+									"key": "reason",
+									"value": "test111",
+									"type": "text"
+								},
+								{
+									"key": "symptoms",
+									"value": "test111",
+									"type": "text"
+								},
+								{
+									"key": "notes",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text"
+								},
+								{
+									"key": "reminder_datetime",
+									"value": "2024-03-21 15:30:00",
+									"type": "text"
+								},
+								{
+									"key": "patient_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "doctor_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/receipts/1?_method=PUT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"receipts",
+								"1"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_RECEIPT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wQ1bIxXe4OM0xywMCswZymTd7A7qYSCItaVMUgGhb5753b80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/receipts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"receipts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "GET_DASHBOARD_LIST_DATA",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "23|SXrSCGNlD3u6UJQOkFwJqL0bHlgWcRiz9dZEQhyQe577f7a7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"dashboard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MedicalEvents",
+			"item": [
+				{
+					"name": "GET_ALL_MEDICAL_EVENTS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|yKqHUhYH9WlmDw5noT6QiTBiUZMW8DvaW30sEI9w64a05f3e",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/medical-events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"medical-events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SHOW_BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|yKqHUhYH9WlmDw5noT6QiTBiUZMW8DvaW30sEI9w64a05f3e",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/medical-events/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"medical-events",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SalaryReport",
+			"item": [
+				{
+					"name": "GET_SALARY_REPORT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|34uV3SD17VyNM58Uyr5lrE4RmVRtqy8fg5WysJBa7f40ff32",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/salary-report",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"salary-report"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "GET_ALL_SETTINGS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "24|REFlPdoA8A0oV3I844k1Rb6tyturSn43z6YmTAFA91580066",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/settings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PatientDocs",
+			"item": [
+				{
+					"name": "GET_ALL_PATIENT_DOCS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|xtlmiztkIHa65OuIIbcrWTzSpXbVRx6IIi4GhVT268d1f1e2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patient-docs?search=repudiandae&page=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patient-docs"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "repudiandae"
+								},
+								{
+									"key": "page",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATIENT_DOC_POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|DTf9SuQlYv6ySHAB3k9QgcxNkLdsmVejUPLv0CjH132fbc8b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Complete Blood Count",
+									"type": "text"
+								},
+								{
+									"key": "document_type",
+									"value": "Electronic Prescriptions for Drugs",
+									"type": "text"
+								},
+								{
+									"key": "document_name",
+									"value": "Complete Blood Count",
+									"type": "text"
+								},
+								{
+									"key": "patient_id",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "doctor_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/igor/Рабочий стол/dthdthdh.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patient-docs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patient-docs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MedicalAnalytics",
+			"item": [
+				{
+					"name": "GET_MEDICAL_ANALYTICS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "16|ztrRPza4aD5fCtXzBWHzj4TrR55GEAczyBfURNY37ff1c6d5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/medical-analytics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"medical-analytics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DoctorNotifications",
+			"item": [
+				{
+					"name": "GET_ALL_NOTIFICATIONS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|OFSFtm4h75HpAiwZruFBGH77BCTLWXulsOmwV3S9b91ae530",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/doctor-notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"doctor-notifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HelpDesk",
+			"item": [
+				{
+					"name": "STORE_HELP_DESK_REQUEST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|l6CFdipEevk7Wit3V0sVdS6Gyucyg5rejZmldays699a49b0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"title\":\"asdad\",\n    \"description\":\"Occaecati aliquam distinctio qui. Earum reiciendis corrupti veritatis ut amet vitae. Quaerat porro provident voluptas a nihil quo.\",\n    \"doctor_id\":1 \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/helpdesk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"helpdesk"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MedicalService",
+			"item": [
+				{
+					"name": "GET_MEDICAL_SERVICE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|X77DQ77iO8UTwn74wztl7RZyYqc5tClxc97NgdMl2582ad4d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/medical-service",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"medical-service"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MedicalEventFeedback",
+			"item": [
+				{
+					"name": "MEDICAL_EVENT_FEEDBACK_POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "11|YdTFYOjbEam3vp1oYJD5rp41vhXpPOZEuOIXpMbLe934bb91",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"overall_quality\": 4,\n    \"meet_expectations\": \"4\",\n    \"useful_topics\": \"fdgbsgbsdbv\",\n    \"material_quality\": 4,\n    \"schedule_convenience\": true,\n    \"organization_quality\": 4,\n    \"fav_sessions\": \"afaerfaerf\",\n    \"speaker_competence\": 4,\n    \"disappointed_sessions\": \"qwefwfwrwarF\",\n    \"medical_event_id\": 30,\n    \"doctor_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/medical-event-feedback",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"medical-event-feedback"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LabTest",
+			"item": [
+				{
+					"name": "LAB_TEST_GET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|tliTWAYl8btwTh61exZ7XbnmlYXuQKB9UCSOP7YH01346949",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/lab-test/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"lab-test",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LAB_TEST_POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|GklfyklCcBI4kNF1t6VrnSgAO9DwexrOTbRHCpWW1f99c0a7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "date_of_medical_analysis",
+									"value": "2023-12-27,",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Complete Blood Count",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/igor/Рабочий стол/dthdthdh.jpg"
+								},
+								{
+									"key": "patient_id",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "doctor_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "mime_type",
+									"value": "jpg",
+									"type": "text"
+								},
+								{
+									"key": "file_hash",
+									"value": "9999626b3456252569939533452s4534563563456345636535569c3b337e8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/lab-test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"lab-test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LAB_TEST_DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|b807VVN0rrfxrWWXdf3IygqIQwg7k3NSXaGdk7aYdfab90ed",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/lab-test/698",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"lab-test",
+								"698"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PhysicalExamination",
+			"item": [
+				{
+					"name": "PHY_EXAM_POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|l6CFdipEevk7Wit3V0sVdS6Gyucyg5rejZmldays699a49b0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"height\": 117,\n    \"weight\": 70,\n    \"heart_rate\": 75,\n    \"blood_pressure\": \"123/34\", \n    \"patient_id\": 12\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/physical-examination",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"physical-examination"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PHY_EXAM_GET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|FbdAJeyurNeBlViefPxeT7uIiujnOMjeOxS5mCBQ3afb52de",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/physical-examination/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"physical-examination",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DiseaseHistory",
+			"item": [
+				{
+					"name": "DISEASE_HISTORY_GET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|L8uzygyRhlmm10sO20wvq6VnYX35y2ILjdmziyi5d788a27c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/disease-history/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"disease-history",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DISEASE_HISTORY_GET_LATEST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "8|BnU4i5sNaCGXPF4GTRmStIY1WnGY8mXzgDGtZwZdc0cab75d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/disease-history/latest/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"disease-history",
+								"latest",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DISEASE_HISTORY_POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|L8uzygyRhlmm10sO20wvq6VnYX35y2ILjdmziyi5d788a27c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"date_of_onset\": \"2024-01-15\",\n    \"diagnosis\": \"Type 2 Diabetes\",\n    \"symptoms\": \"Increased thirst, frequent urination, hunger, fatigue, and blurred vision\",\n    \"treatment\": \"Metformin 500mg, once daily\",\n    \"previous_interventions\": \"Diet and exercise plan, weight loss program\",\n    \"test_results\": \"HbA1c 7.5%, fasting blood sugar 130 mg/dL\",\n    \"progress\": \"Slight improvement in blood sugar levels over the last 3 months\",\n    \"notes\": \"Patient to follow up in 3 months for further evaluation\",\n    \"patient_id\": 12\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/disease-history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"disease-history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TreatmantPlan",
+			"item": [
+				{
+					"name": "TREATMANT_PLAN_GET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|s4Tw3Wf9EojJX56xSAhTGnDgbEwt3ucJQVRSc4L9af2a332a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/treatment-plan/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"treatment-plan",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TREATMANT_PLAN_DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|b807VVN0rrfxrWWXdf3IygqIQwg7k3NSXaGdk7aYdfab90ed",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/treatment-plan/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"treatment-plan",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TREATMANT_PLAN_POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|L8uzygyRhlmm10sO20wvq6VnYX35y2ILjdmziyi5d788a27c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"medicament_name\": \"Aspirin\",\n    \"medication_dosage\": \"100mg\",\n    \"medication_frequency\": \"Once daily\",\n    \"medication_timing\": \"BeforeMeal\",\n    \"patient_id\": 12\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/treatment-plan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"treatment-plan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

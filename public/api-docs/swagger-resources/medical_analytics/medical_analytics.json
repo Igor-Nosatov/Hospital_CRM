@@ -1,0 +1,208 @@
+{
+    "get": {
+      "summary": "Retrieve a detailed medical analytics report",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful retrieval of medical analytics report",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "payment_report": {
+                        "type": "object",
+                        "properties": {
+                          "month": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "example": ["August 2024"]
+                          },
+                          "total": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "example": ["14242"]
+                          }
+                        }
+                      },
+                      "top_services": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "service_name": {
+                              "type": "string",
+                              "example": "Specialized Care"
+                            },
+                            "type": {
+                              "type": "string",
+                              "example": "Offline"
+                            },
+                            "service_count_used": {
+                              "type": "integer",
+                              "example": 1
+                            },
+                            "service_price": {
+                              "type": "integer",
+                              "example": 100
+                            }
+                          }
+                        }
+                      },
+                      "expenses": {
+                        "type": "object",
+                        "properties": {
+                          "medical_expense_type": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "example": [
+                              "Consultation",
+                              "Procedure",
+                              "Diagnostic",
+                              "Training",
+                              "Equipment",
+                              "Prescription"
+                            ]
+                          },
+                          "amount": {
+                            "type": "array",
+                            "items": {
+                              "type": "integer"
+                            },
+                            "example": [15626, 10954, 7185, 10731, 8492, 6242]
+                          }
+                        }
+                      },
+                      "service_statistic": {
+                        "type": "object",
+                        "properties": {
+                          "patient_offline_service": {
+                            "type": "array",
+                            "items": {
+                              "type": "integer"
+                            },
+                            "example": [0, 0, 0, 0, 0, 0, 0]
+                          },
+                          "patient_online_service": {
+                            "type": "array",
+                            "items": {
+                              "type": "integer"
+                            },
+                            "example": [0, 0, 0, 0, 0, 0, 0]
+                          }
+                        }
+                      },
+                      "top_patient_visits_for_month": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "example": 135
+                            },
+                            "patient_full_name": {
+                              "type": "string",
+                              "example": "Murphy Rath"
+                            },
+                            "patient_visits": {
+                              "type": "integer",
+                              "example": 3
+                            },
+                            "patient_email": {
+                              "type": "string",
+                              "example": "ashtyn76@ortiz.com"
+                            }
+                          }
+                        }
+                      },
+                      "payments": {
+                        "type": "object",
+                        "properties": {
+                          "month": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "example": ["August 2024"]
+                          },
+                          "amount": {
+                            "type": "array",
+                            "items": {
+                              "type": "integer"
+                            },
+                            "example": [14242]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized access",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 401
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Unauthorized"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 500
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "An internal server error occurred."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

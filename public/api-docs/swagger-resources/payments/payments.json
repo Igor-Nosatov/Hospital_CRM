@@ -1,0 +1,314 @@
+{
+    "get": {
+      "summary": "Retrieve a list of payments",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful retrieval of payments",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "example": 1
+                        },
+                        "amount": {
+                          "type": "integer",
+                          "example": 211
+                        },
+                        "payment_date": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-21T00:00:00.000000Z"
+                        },
+                        "payment_status": {
+                          "type": "string",
+                          "example": "Processed"
+                        },
+                        "payment_method": {
+                          "type": "string",
+                          "example": "Visa Retired"
+                        },
+                        "transaction_id": {
+                          "type": "string",
+                          "example": "ac063fb9-f894-3afc-b8c0-354b05632dc8"
+                        },
+                        "currency": {
+                          "type": "string",
+                          "example": "USD"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized access",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 401
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Unauthorized"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 500
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "An internal server error occurred."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "post": {
+        "summary": "Create a new payment",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "number",
+                    "format": "float",
+                    "example": 100
+                  },
+                  "payment_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2024-03-20T00:00:00.000000Z"
+                  },
+                  "payment_status": {
+                    "type": "string",
+                    "example": "Processed"
+                  },
+                  "payment_method": {
+                    "type": "string",
+                    "example": "credit_card"
+                  },
+                  "transaction_id": {
+                    "type": "string",
+                    "example": "123456789"
+                  },
+                  "card_expiry_date": {
+                    "type": "string",
+                    "example": "2025-12-31"
+                  },
+                  "comments": {
+                    "type": "string",
+                    "example": "Payment for medical services"
+                  },
+                  "currency": {
+                    "type": "string",
+                    "example": "USD"
+                  },
+                  "patient_id": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "doctor_id": {
+                    "type": "integer",
+                    "example": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful creation of a payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "number",
+                          "format": "float",
+                          "example": 100
+                        },
+                        "payment_date": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-03-20T00:00:00.000000Z"
+                        },
+                        "payment_status": {
+                          "type": "string",
+                          "example": "Processed"
+                        },
+                        "payment_method": {
+                          "type": "string",
+                          "example": "credit_card"
+                        },
+                        "transaction_id": {
+                          "type": "string",
+                          "example": "123456789"
+                        },
+                        "card_expiry_date": {
+                          "type": "string",
+                          "example": "2025-12-31"
+                        },
+                        "comments": {
+                          "type": "string",
+                          "example": "Payment for medical services"
+                        },
+                        "currency": {
+                          "type": "string",
+                          "example": "USD"
+                        },
+                        "patient_id": {
+                          "type": "integer",
+                          "example": 1
+                        },
+                        "doctor_id": {
+                          "type": "integer",
+                          "example": 1
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-27T13:37:13.000000Z"
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-27T13:37:13.000000Z"
+                        },
+                        "id": {
+                          "type": "integer",
+                          "example": 2001
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 400
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Bad request"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 401
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Unauthorized"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 500
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "An internal server error occurred."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  }

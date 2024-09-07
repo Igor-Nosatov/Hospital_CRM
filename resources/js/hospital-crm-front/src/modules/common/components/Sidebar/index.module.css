@@ -1,0 +1,45 @@
+.sidebar{
+    width:100%;
+    height: 90vh;
+}
+
+.logout {
+    padding: 10px 0px 0px 0px;
+    height: auto;
+    width: 60px;
+}
+.topMenu{
+    position: absolute;
+    bottom: 81%;
+}
+.middleMenu {
+    position: absolute;
+    bottom: 40%;
+}
+
+.bottomMenu {
+    position: absolute;
+    bottom: 5%;
+}
+
+.link_style {
+    color: #000;
+    cursor: pointer;
+}
+
+.lni_style {
+    padding: 10px 0px;
+}
+
+.link_icon{
+    height: 50px;
+    width: 50px;
+}
+.btn_logout {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: #fff;
+    position: relative;
+    right: 15px;
+}
